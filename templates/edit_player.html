@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Edit Player</title>
+</head>
+
+<body>
+
+<h1>Edit Player</h1>
+
+<form method="post">
+
+Name
+
+<br>
+
+<input
+type="text"
+name="name"
+value="{{player.name}}">
+
+<br><br>
+
+Position
+
+<br>
+
+<select name="position">
+
+<option value="keeper">
+Keeper
+</option>
+
+<option value="defence">
+Defence
+</option>
+
+<option value="attack">
+Attack
+</option>
+
+<option value="both">
+Both
+</option>
+
+</select>
+
+<br><br>
+
+Skill
+
+<br>
+
+<input
+type="number"
+name="skill"
+min="1"
+max="9"
+value="{{player.skill}}">
+
+<br><br>
+
+<button type="submit">
+Save
+</button>
+
+</form>
+
+</body>
+
+</html>

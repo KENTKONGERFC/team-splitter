@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Team Result</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+    margin:30px;
+}
+
+.title{
+    text-align:center;
+    color:#1f4e79;
+}
+
+.teams{
+    display:flex;
+    gap:20px;
+}
+
+.team{
+    flex:1;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.blue{
+    background:#dceeff;
+}
+
+.white{
+    background:#ffffff;
+}
+
+.team h2{
+    text-align:center;
+}
+
+.team ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.team li{
+    padding:4px;
+}
+
+.stats{
+    background:white;
+    padding:12px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:30px;
+}
+
+button{
+    background:#1f4e79;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+
+.teams{
+    display:flex;
+    gap:20px;
+}
+
+.team{
+    flex:1;
+    border-radius:12px;
+    padding:20px;
+}
+
+.blue{
+    background:#dceeff;
+}
+
+.white{
+    background:#f8f8f8;
+}
+
+.stats{
+    background:white;
+    padding:12px;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="title">KENT KONGER FC</h1>   
+
+<div class="teams">
+
+<div class="team blue">
+
+<h1>🔵 Blue Team</h1>
+
+<ul>
+{% for p in team_a %}
+<li>
+{{p.name}}
+</li>
+{% endfor %}
+</ul>
+
+<div class="stats">
+
+<p>Players: {{stats_a.players}}</p>
+<p>Total Skill: {{skill_a}}</p>
+
+<p>Keeper: {{stats_a.keeper}}</p>
+<p>Defence: {{stats_a.defence}}</p>
+<p>Attack: {{stats_a.attack}}</p>
+<p>Both {{stats_a.both}}</p>
+</div>
+</div>
+
+<hr>
+
+<div class="team white">
+
+<h1>⚪ White Team</h1>    
+
+<ul>
+{% for p in team_b %}
+<li>
+{{p.name}}
+</li>
+{% endfor %}
+</ul>
+
+<div class="stats">
+
+<p>Players: {{stats_b.players}}</p>
+<p>Total Skill: {{skill_b}}</p>
+
+<p>Keeper: {{stats_b.keeper}}</p>
+<p>Defence: {{stats_b.defence}}</p>
+<p>Attack: {{stats_b.attack}}</p>
+<p>Both: {{stats_b.both}}</p>
+</div>
+
+<hr>
+
+</div>
+</div>
+
+<br>
+
+<form action="/generate_again" method="post">
+
+<input
+type="hidden"
+name="team_a"
+value='{{ team_a|tojson }}'>
+
+<input
+type="hidden"
+name="team_b"
+value='{{ team_b|tojson }}'>
+
+
+<button type="submit">
+Generate Again
+</button>
+
+</form>
+
+<br>
+
+<form action="/confirm" method="post">
+
+<input
+type="hidden"
+name="team_a"
+value='{{ team_a|tojson }}'>
+
+<input
+type="hidden"
+name="team_b"
+value='{{ team_b|tojson }}'>
+
+<button type="submit">
+Confirm Teams
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+Back
+</a>
+
+</body>
+
+</html>

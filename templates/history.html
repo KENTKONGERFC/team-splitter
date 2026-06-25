@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>Match History</h1>
+
+{% for match in history %}
+
+<hr>
+
+<h3>{{ match.date }}</h3>
+
+<h4>🔵 Team Blue</h4>
+
+<ul>
+{% for p in match.blue %}
+<li>{{ p }}</li>
+{% endfor %}
+</ul>
+
+<h4>⚪ Team White</h4>
+
+<ul>
+{% for p in match.white %}
+<li>{{ p }}</li>
+{% endfor %}
+</ul>
+
+{% endfor %}
+
+<br>
+
+<a href="/dashboard">
+Back
+</a>
+
+</body>
+
+</html>

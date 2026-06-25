@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Player Management</title>
+</head>
+
+<body>
+
+<h1>Player Management</h1>
+
+<a href="/add_player">
++ Add Player
+</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Skill</th>
+    <th>Status</th>
+    <th>Edit</th>
+    <th>Action</th>
+</tr>
+
+{% for p in players %}
+
+<tr>
+
+    <td>{{p.name}}</td>
+
+    <td>{{p.position}}</td>
+
+    <td>{{p.skill}}</td>
+
+    <td>
+        {% if p.active == 1 %}
+            Active
+        {% else %}
+            Inactive
+        {% endif %}
+    </td>
+
+    <td>
+        <a href="/edit_player/{{p.id}}">
+            Edit
+        </a>
+    </td>
+
+    <td>
+
+        {% if p.active == 1 %}
+
+            <a href="/deactivate_player/{{p.id}}">
+                Disable
+            </a>
+
+        {% else %}
+
+            <a href="/activate_player/{{p.id}}">
+                Enable
+            </a>
+
+        {% endif %}
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard">
+Back
+</a>
+
+</body>
+
+</html>

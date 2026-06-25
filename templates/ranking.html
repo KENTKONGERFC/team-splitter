@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Teammate Ranking</title>
+</head>
+
+<body>
+
+<h1>Most Frequent Teammates</h1>
+
+<table border="1">
+
+<tr>
+<th>Player 1</th>
+<th>Player 2</th>
+<th>Count</th>
+</tr>
+
+{% for row in rows %}
+
+<tr>
+<td>{{row.player1}}</td>
+<td>{{row.player2}}</td>
+<td>{{row.count}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard">
+Back
+</a>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f6f8;
+    margin:30px;
+}
+
+h1{
+    color:#1f4e79;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#1f4e79;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f2f8ff;
+}
+
+button{
+    background:#1f4e79;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+</style>
+
+<body>
+
+<h1>KENT KONGER FC</h1>       
+
+<h2>Attendance</h2>
+
+<form method="post" action="/generate">
+
+<table border="1">
+
+<tr>
+    <th>✓</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Skill</th>
+</tr>
+
+{% for p in players %}
+
+<tr>
+
+<td>
+<input
+type="checkbox"
+name="players"
+value="{{p.id}}"
+style="width:22px;height:22px;">
+</td>
+
+<td>{{p.name}}</td>
+
+<td>{{p.position}}</td>
+
+<td>{{p.skill}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h3>
+Total Avtive Players:
+{{players|length}}
+</h3>
+
+<hr>
+
+
+
+<h3>Guest Players</h3>
+
+{% for i in range(1,5) %}
+
+<div>
+
+<input
+name="guest_name_{{i}}"
+placeholder="Guest Name">
+
+<select name="guest_position_{{i}}">
+<option>keeper</option>
+<option>defence</option>
+<option>attack</option>
+<option>both</option>
+</select>
+
+<input
+type="number"
+min="1"
+max="9"
+name="guest_skill_{{i}}">
+
+</div>
+
+{% endfor %}
+
+<br>
+
+<button type="submit">
+Generate Teams
+</button>
+
+<br><br>
+
+<a href="/history">
+Match History
+</a>
+
+|
+
+<a href="/ranking">
+Teammate Ranking
+</a>
+
+|
+
+<a href="/players">
+Player Management
+</a>
+
+</form>
+
+</body>
+</html>
