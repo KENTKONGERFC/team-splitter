@@ -132,3 +132,48 @@ a:hover{
     text-decoration:underline;
 
 }
+
+@media (max-width:768px){
+
+body{
+
+    margin:10px;
+
+}
+
+.teams{
+
+    flex-direction:column;
+
+}
+
+.team{
+
+    width:100%;
+
+}
+
+table{
+
+    font-size:15px;
+
+}
+
+button,
+input[type=submit]{
+
+    width:100%;
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+input[type=checkbox]{
+
+    transform:scale(2);
+
+}
+
+}
