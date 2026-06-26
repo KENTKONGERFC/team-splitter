@@ -15,7 +15,9 @@ PASSWORD = "admin"
 def get_db():
 
     db_path = os.path.join(
-        "/data", "football.db"
+        os.path.dirname(__file__),
+        "database",
+        "football.db"
     )
 
     print("DB PATH =", db_path)
