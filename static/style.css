@@ -1,2 +1,134 @@
-body {
+body{
+
+    font-family:Arial,sans-serif;
+
+    background:#f4f6f9;
+
+    margin:20px;
+
+}
+
+h1{
+
+    text-align:center;
+
+    color:#222;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+}
+
+th{
+
+    background:#1976d2;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+td{
+
+    padding:10px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+button,
+input[type=submit]{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#125aa0;
+
+}
+
+input[type=checkbox]{
+
+    transform:scale(1.8);
+
+}
+
+.stats{
+
+    background:white;
+
+    padding:15px;
+
+    margin-top:10px;
+
+    border-radius:10px;
+
+}
+
+.team{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+}
+
+.teams{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.blue{
+
+    border-top:6px solid royalblue;
+
+}
+
+.white{
+
+    border-top:6px solid gray;
+
+}
+
+a{
+
+    color:#1976d2;
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
 }
